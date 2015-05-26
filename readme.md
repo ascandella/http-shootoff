@@ -43,8 +43,8 @@ tornado
     Time per request:       0.662 [ms] (mean, across all concurrent requests)
     Transfer rate:          293.56 [Kbytes/sec] received
 
-flask+gunicorn
---------------
+flask+gunicorn (4 workers)
+-------------------------
 
     Concurrency Level:      10
     Time taken for tests:   1.565 seconds
@@ -58,3 +58,18 @@ flask+gunicorn
     Time per request:       0.157 [ms] (mean, across all concurrent requests)
     Transfer rate:          1023.28 [Kbytes/sec] received
 
+
+flask+gunicorn (1 worker)
+-------------------------
+
+    Concurrency Level:      10
+    Time taken for tests:   5.370 seconds
+    Complete requests:      10000
+    Failed requests:        0
+    Write errors:           0
+    Total transferred:      1640000 bytes
+    HTML transferred:       50000 bytes
+    Requests per second:    1862.09 [#/sec] (mean)
+    Time per request:       5.370 [ms] (mean)
+    Time per request:       0.537 [ms] (mean, across all concurrent requests)
+    Transfer rate:          298.23 [Kbytes/sec] received
