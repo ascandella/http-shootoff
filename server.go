@@ -1,14 +1,10 @@
 package main
 
-import (
-	"net/http"
-	"runtime"
-)
+import "net/http"
 
 var response = []byte("hello")
 
 func main() {
-	runtime.GOMAXPROCS(runtime.NumCPU())
 	http.HandleFunc("/simple", func(w http.ResponseWriter, r *http.Request) {
 		w.Write(response)
 	})
