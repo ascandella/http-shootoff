@@ -9,4 +9,7 @@ go:
 	go build server.go
 	./server
 
-.PHONY: bench go
+flask:
+	gunicorn -w 4 f:app -b '127.0.0.1:$(port)'
+
+.PHONY: bench go flask
