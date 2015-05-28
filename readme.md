@@ -73,3 +73,35 @@ flask+gunicorn (1 worker)
     Time per request:       5.370 [ms] (mean)
     Time per request:       0.537 [ms] (mean, across all concurrent requests)
     Transfer rate:          298.23 [Kbytes/sec] received
+
+
+flask+uwsgi (4 workers)
+----------------------
+
+    Concurrency Level:      10
+    Time taken for tests:   0.746 seconds
+    Complete requests:      10000
+    Failed requests:        0
+    Write errors:           0
+    Total transferred:      830000 bytes
+    HTML transferred:       50000 bytes
+    Requests per second:    13397.50 [#/sec] (mean)
+    Time per request:       0.746 [ms] (mean)
+    Time per request:       0.075 [ms] (mean, across all concurrent requests)
+    Transfer rate:          1085.93 [Kbytes/sec] received
+
+
+flask+uwsgi (1 worker)
+----------------------
+
+    Concurrency Level:      10
+    Time taken for tests:   2.911 seconds
+    Complete requests:      10000
+    Failed requests:        0
+    Write errors:           0
+    Total transferred:      830000 bytes
+    HTML transferred:       50000 bytes
+    Requests per second:    3435.76 [#/sec] (mean)
+    Time per request:       2.911 [ms] (mean)
+    Time per request:       0.291 [ms] (mean, across all concurrent requests)
+    Transfer rate:          278.48 [Kbytes/sec] received
