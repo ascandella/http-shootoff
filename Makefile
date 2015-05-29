@@ -9,7 +9,14 @@ go:
 	go build server.go
 	./server
 
-flask:
+flask-gunicorn:
+	virtualenv env
+	./env/bin/pip install flask gunicorn
 	gunicorn -w 4 f:app -b '127.0.0.1:$(port)'
 
-.PHONY: bench go flask
+flask-uwsgi:
+	virtualenv env
+	./env/bin/pip install flask uwsgi
+	./env/bin/uwsgi --http '127.0.0.1:$(port)' --virtualenv ./env --master --processes 4 -w f:app
+
+.PHONY: bench go flask-gunicorn flask-uwsgi
