@@ -3,7 +3,7 @@ num := 10000
 port := 8080
 
 bench:
-	ab -c $(concurrency) -n $(num) http://localhost:$(port)/simple
+	ab -c $(concurrency) -n $(num) http://127.0.0.1:$(port)/simple
 
 go:
 	go build server.go
@@ -12,7 +12,7 @@ go:
 flask-gunicorn:
 	virtualenv env
 	./env/bin/pip install flask gunicorn
-	gunicorn -w 4 f:app -b '127.0.0.1:$(port)'
+	./env/bin/gunicorn -w 4 f:app -b '127.0.0.1:$(port)'
 
 flask-uwsgi:
 	virtualenv env
