@@ -105,3 +105,35 @@ flask+uwsgi (1 worker)
     Time per request:       2.911 [ms] (mean)
     Time per request:       0.291 [ms] (mean, across all concurrent requests)
     Transfer rate:          278.48 [Kbytes/sec] received
+
+
+webmachine
+----------
+
+    Concurrency Level:      10
+    Time taken for tests:   0.670 seconds
+    Complete requests:      10000
+    Failed requests:        0
+    Write errors:           0
+    Total transferred:      1620000 bytes
+    HTML transferred:       50000 bytes
+    Requests per second:    14928.11 [#/sec] (mean)
+    Time per request:       0.670 [ms] (mean)
+    Time per request:       0.067 [ms] (mean, across all concurrent requests)
+    Transfer rate:          2361.67 [Kbytes/sec] received
+
+
+mochiweb
+--------
+
+    Concurrency Level:      10
+    Time taken for tests:   0.471 seconds
+    Complete requests:      10000
+    Failed requests:        0
+    Write errors:           0
+    Total transferred:      1810000 bytes
+    HTML transferred:       60000 bytes
+    Requests per second:    21222.55 [#/sec] (mean)
+    Time per request:       0.471 [ms] (mean)
+    Time per request:       0.047 [ms] (mean, across all concurrent requests)
+    Transfer rate:          3751.25 [Kbytes/sec] received
