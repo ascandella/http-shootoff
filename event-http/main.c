@@ -13,26 +13,21 @@
 
 
 static void doit(struct evhttp_request *req, void *arg) {
-  struct evbuffer *buf;
-  buf = evbuffer_new();
+  struct evbuffer *buf = (struct evbuffer *) arg;
   evbuffer_add(buf, "hello", 5) == 0;
   evhttp_send_reply(req, 200, "OK", buf);
-  evbuffer_free(buf);
 }
-
 
 struct args {
   int fd;
 };
 
-
 static void* thread_worker(void *arg) {
   struct args *args = (struct args*) arg;
-
   struct event_base *base = event_base_new();
   struct evhttp *evh = evhttp_new(base);
   evhttp_accept_socket(evh, args->fd);
-  evhttp_set_gencb(evh, doit, NULL);
+  evhttp_set_gencb(evh, doit, (void *) evbuffer_new());
   event_base_dispatch(base);
 }
 
