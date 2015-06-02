@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env iojs
 var http = require('http');
 
 http.createServer(function (request, response) {
