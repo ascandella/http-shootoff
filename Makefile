@@ -20,4 +20,8 @@ flask-uwsgi: env
 	./env/bin/pip install flask uwsgi
 	./env/bin/uwsgi --http '127.0.0.1:$(port)' --virtualenv ./env --master --processes 4 -w f:app
 
-.PHONY: bench go flask-gunicorn flask-uwsgi
+warp:
+	cd warp; cabal sandbox init && cabal install --only-dependencies && cabal build
+	./warp/dist/build/http-shootoff-warp/http-shootoff-warp $(port)
+
+.PHONY: bench go flask-gunicorn flask-uwsgi warp
