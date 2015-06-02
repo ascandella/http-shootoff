@@ -1,4 +1,5 @@
 #include <assert.h>
+#include <getopt.h>
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -12,26 +13,21 @@
 
 
 static void doit(struct evhttp_request *req, void *arg) {
-  struct evbuffer *buf;
-  assert((buf = evbuffer_new()) != nullptr);
-  assert(evbuffer_add(buf, "hello", 5) == 0);
+  struct evbuffer *buf = (struct evbuffer *) arg;
+  evbuffer_add(buf, "hello", 5) == 0;
   evhttp_send_reply(req, 200, "OK", buf);
-  evbuffer_free(buf);
 }
-
 
 struct args {
   int fd;
 };
 
-
 static void* thread_worker(void *arg) {
   struct args *args = (struct args*) arg;
-
   struct event_base *base = event_base_new();
   struct evhttp *evh = evhttp_new(base);
   evhttp_accept_socket(evh, args->fd);
-  evhttp_set_gencb(evh, doit, nullptr);
+  evhttp_set_gencb(evh, doit, (void *) evbuffer_new());
   event_base_dispatch(base);
 }
 
@@ -81,7 +77,7 @@ int main(int argc, char **argv) {
   }
   evutil_make_socket_nonblocking(sock);
 
-  struct args args{sock};
+  struct args args = {sock};
   pthread_attr_t attr;
   pthread_attr_init(&attr);
   pthread_t thread;
@@ -92,5 +88,5 @@ int main(int argc, char **argv) {
       return 1;
     }
   }
-  pthread_join(thread, nullptr);
+  pthread_join(thread, NULL);
 }

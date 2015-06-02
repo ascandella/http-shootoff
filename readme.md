@@ -138,6 +138,7 @@ mochiweb
     Time per request:       0.047 [ms] (mean, across all concurrent requests)
     Transfer rate:          3751.25 [Kbytes/sec] received
 
+
 warp (haskell)
 --------------
 
@@ -153,3 +154,34 @@ warp (haskell)
     Time per request:       0.046 [ms] (mean, across all concurrent requests)
     Transfer rate:          1800.16 [Kbytes/sec] received
 
+
+libevent (C, 1 thread)
+----------------------
+
+    Concurrency Level:      10
+    Time taken for tests:   0.437 seconds
+    Complete requests:      10000
+    Failed requests:        0
+    Write errors:           0
+    Total transferred:      690000 bytes
+    HTML transferred:       50000 bytes
+    Requests per second:    22885.13 [#/sec] (mean)
+    Time per request:       0.437 [ms] (mean)
+    Time per request:       0.044 [ms] (mean, across all concurrent requests)
+    Transfer rate:          1542.06 [Kbytes/sec] received
+
+
+libevent (C, 10 threads)
+------------------------
+
+    Concurrency Level:      10
+    Time taken for tests:   0.560 seconds
+    Complete requests:      10000
+    Failed requests:        0
+    Write errors:           0
+    Total transferred:      690000 bytes
+    HTML transferred:       50000 bytes
+    Requests per second:    17852.49 [#/sec] (mean)
+    Time per request:       0.560 [ms] (mean)
+    Time per request:       0.056 [ms] (mean, across all concurrent requests)
+    Transfer rate:          1202.95 [Kbytes/sec] received
