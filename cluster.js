@@ -11,4 +11,3 @@ if (cluster.isMaster) {
         res.end('hello');
     }).listen(8080);
 }
-
