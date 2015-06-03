@@ -24,4 +24,8 @@ warp:
 	cd warp; cabal sandbox init && cabal install --only-dependencies && cabal build
 	./warp/dist/build/http-shootoff-warp/http-shootoff-warp $(port)
 
-.PHONY: bench go flask-gunicorn flask-uwsgi warp
+bash:
+	cp bashttpd.conf bashttpd/
+	socat TCP4-LISTEN:$(port),fork EXEC:./bashttpd/bashttpd
+
+.PHONY: bench go flask-gunicorn flask-uwsgi warp bash

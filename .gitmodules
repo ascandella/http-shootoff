@@ -1,0 +1,3 @@
+[submodule "bashttpd"]
+	path = bashttpd
+	url = git@github.com:avleen/bashttpd.git
