@@ -185,3 +185,18 @@ libevent (C, 10 threads)
     Time per request:       0.560 [ms] (mean)
     Time per request:       0.056 [ms] (mean, across all concurrent requests)
     Transfer rate:          1202.95 [Kbytes/sec] received
+
+bashttpd
+--------
+
+    Concurrency Level:      10
+    Time taken for tests:   7.075 seconds
+    Complete requests:      10000
+    Failed requests:        0
+    Write errors:           0
+    Total transferred:      1590000 bytes
+    HTML transferred:       70000 bytes
+    Requests per second:    1413.34 [#/sec] (mean)
+    Time per request:       7.075 [ms] (mean)
+    Time per request:       0.708 [ms] (mean, across all concurrent requests)
+    Transfer rate:          219.45 [Kbytes/sec] received
