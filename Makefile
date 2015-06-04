@@ -28,4 +28,8 @@ bash:
 	cp bashttpd.conf bashttpd/
 	socat TCP4-LISTEN:$(port),fork EXEC:./bashttpd/bashttpd
 
-.PHONY: bench go flask-gunicorn flask-uwsgi warp bash
+immutant:
+	cd immutant && lein uberjar
+	java -jar ./immutant/target/shootoff-0.1.0-standalone.jar $(port)
+
+.PHONY: bench go flask-gunicorn flask-uwsgi warp bash immutant
