@@ -200,3 +200,18 @@ bashttpd
     Time per request:       7.075 [ms] (mean)
     Time per request:       0.708 [ms] (mean, across all concurrent requests)
     Transfer rate:          219.45 [Kbytes/sec] received
+
+clojure/immutant
+----------------
+
+    Concurrency Level:      10
+    Time taken for tests:   1.119 seconds
+    Complete requests:      10000
+    Failed requests:        0
+    Write errors:           0
+    Total transferred:      1430000 bytes
+    HTML transferred:       50000 bytes
+    Requests per second:    8938.67 [#/sec] (mean)
+    Time per request:       1.119 [ms] (mean)
+    Time per request:       0.112 [ms] (mean, across all concurrent requests)
+    Transfer rate:          1248.27 [Kbytes/sec] received
