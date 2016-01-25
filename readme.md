@@ -215,3 +215,18 @@ clojure/immutant
     Time per request:       1.119 [ms] (mean)
     Time per request:       0.112 [ms] (mean, across all concurrent requests)
     Transfer rate:          1248.27 [Kbytes/sec] received
+
+elixir/cowboy
+-------------
+
+    Concurrency Level:      10
+    Time taken for tests:   0.575 seconds
+    Complete requests:      10000
+    Failed requests:        0
+    Write errors:           0
+    Total transferred:      1480000 bytes
+    HTML transferred:       50000 bytes
+    Requests per second:    17398.72 [#/sec] (mean)
+    Time per request:       0.575 [ms] (mean)
+    Time per request:       0.057 [ms] (mean, across all concurrent requests)
+    Transfer rate:          2514.66 [Kbytes/sec] received
