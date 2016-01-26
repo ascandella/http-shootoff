@@ -32,4 +32,9 @@ immutant:
 	cd immutant && lein uberjar
 	java -jar ./immutant/target/shootoff-0.1.0-standalone.jar $(port)
 
+elixir-cowboy:
+	cd elixir/shootoff && \
+	mix deps.get && \
+	mix release
+
 .PHONY: bench go flask-gunicorn flask-uwsgi warp bash immutant
