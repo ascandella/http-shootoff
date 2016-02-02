@@ -9,6 +9,12 @@ go:
 	go build server.go
 	./server
 
+node:
+	./server.js
+
+node-cluster:
+	./cluster.js
+
 env:
 	virtualenv $@
 

@@ -1,5 +1,5 @@
 go
---
+-------------------------
 
     Concurrency Level:      10
     Time taken for tests:   0.546 seconds
@@ -14,7 +14,7 @@ go
     Transfer rate:          2162.86 [Kbytes/sec] received
 
 node
-----
+-------------------------
 
     Concurrency Level:      10
     Time taken for tests:   1.353 seconds
@@ -28,8 +28,23 @@ node
     Time per request:       0.135 [ms] (mean, across all concurrent requests)
     Transfer rate:          577.30 [Kbytes/sec] received
 
+node-cluster
+-------------------------
+
+    Concurrency Level:      10
+    Time taken for tests:   0.531 seconds
+    Complete requests:      10000
+    Failed requests:        0
+    Write errors:           0
+    Total transferred:      800000 bytes
+    HTML transferred:       50000 bytes
+    Requests per second:    18845.45 [#/sec] (mean)
+    Time per request:       0.531 [ms] (mean)
+    Time per request:       0.053 [ms] (mean, across all concurrent requests)
+    Transfer rate:          1472.30 [Kbytes/sec] received
+
 tornado
--------
+-------------------------
 
     Concurrency Level:      10
     Time taken for tests:   6.620 seconds
@@ -76,7 +91,7 @@ flask+gunicorn (1 worker)
 
 
 flask+uwsgi (4 workers)
-----------------------
+-------------------------
 
     Concurrency Level:      10
     Time taken for tests:   0.746 seconds
@@ -92,7 +107,7 @@ flask+uwsgi (4 workers)
 
 
 flask+uwsgi (1 worker)
-----------------------
+-------------------------
 
     Concurrency Level:      10
     Time taken for tests:   2.911 seconds
@@ -108,7 +123,7 @@ flask+uwsgi (1 worker)
 
 
 webmachine
-----------
+-------------------------
 
     Concurrency Level:      10
     Time taken for tests:   0.670 seconds
@@ -124,7 +139,7 @@ webmachine
 
 
 mochiweb
---------
+-------------------------
 
     Concurrency Level:      10
     Time taken for tests:   0.471 seconds
